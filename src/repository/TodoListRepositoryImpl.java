@@ -23,6 +23,18 @@ public class TodoListRepositoryImpl implements TodoListRepository{
         return  isFull;
     }
 
+    public void resizeIfFull(){
+        // Jika penuh, resize ukuran array 2x lipat
+        if (isFull()){
+            var temp = data;
+            data = new TodoList[data.length * 2];
+
+            for (int i = 0; i < temp.length; i++) {
+                data[i] = temp[i];
+            }
+        }
+    }
+
     @Override
     public void add(TodoList todoList) {
 
