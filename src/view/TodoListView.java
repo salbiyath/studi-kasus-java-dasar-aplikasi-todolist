@@ -20,7 +20,7 @@ public class TodoListView {
             System.out.println("2. Hapus");
             System.out.println("x. Keluar");
 
-            var input = InputUtil.input("Pilih");
+            var input = InputUtil.input("Pilih : ");
 
             if (input.equals("1")){
                 addTodoList();
@@ -29,7 +29,7 @@ public class TodoListView {
             } else if (input.equals("x")) {
                 break;
             } else {
-                System.out.printf("Pilihan tidak dimengerti");
+                System.out.println("Pilihan tidak dimengerti");
             }
 
         }
