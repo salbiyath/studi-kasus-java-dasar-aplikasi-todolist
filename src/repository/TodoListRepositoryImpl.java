@@ -37,7 +37,15 @@ public class TodoListRepositoryImpl implements TodoListRepository{
 
     @Override
     public void add(TodoList todoList) {
+        resizeIfFull();
 
+        // Tambahkan ke posisi yang data array NULL
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] == null){
+                data[i] = todoList;
+                break;
+            }
+        }
     }
 
     @Override
