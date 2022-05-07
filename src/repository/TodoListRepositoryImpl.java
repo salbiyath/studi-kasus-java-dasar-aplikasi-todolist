@@ -11,6 +11,18 @@ public class TodoListRepositoryImpl implements TodoListRepository{
         return data;
     }
 
+    public boolean isFull(){
+        var isFull = true;
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] == null){
+                // Model masih ada yang kosong
+                isFull = false;
+                break;
+            }
+        }
+        return  isFull;
+    }
+
     @Override
     public void add(TodoList todoList) {
 
